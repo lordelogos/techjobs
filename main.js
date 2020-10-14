@@ -213,13 +213,13 @@ function openjob(){
 	e.preventDefault();
 	console.log(e.target.href);
 	jobs.innerHTML = '';
+	document.querySelector('#pagination').style.visibility = 'hidden';
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', `${e.target.href}.json`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
 			var pme = new Jobdesc(arr);
-			document.querySelector('#pagination').style.visibility = 'hidden';
 			console.log(pme.jobpage())
 			mainnav.innerHTML = pme.quickactions();
 			jobs.innerHTML = pme.jobpage();
@@ -406,6 +406,7 @@ function loadPg2(){
 			</div>
 		</form>
 	`;
+	document.querySelector('#pagination').style.visibility = 'visible';
 	loadPg();
 
 }
