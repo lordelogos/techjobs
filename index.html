@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jobs Searcher | project by Paul Ehikhuemen</title>
+	<link rel="stylesheet" href="styles.css" id="theme">
+	<script>
+		var selection = JSON.parse(localStorage.getItem('theme'));
+		if (selection == null || selection == ''){
+			//pass
+		}else if(selection){
+			document.querySelector('#theme').href = 'styles1.css'
+		}
+	</script>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header id='main-header'>
+		<div id="brand">
+			<label>Techjobs</label>
+		</div>
+
+		<div id="nav">
+			<label><svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><circle cx="256" cy="256.003" r="113.762"/><path d="m506.722 344.416c-54.424-46.494-54.379-130.373 0-176.827 11.021-9.415 3.522-27.495-10.919-26.358-71.357 5.621-130.649-53.735-125.031-125.031 1.135-14.426-16.93-21.956-26.358-10.919-46.494 54.424-130.373 54.379-176.827 0-9.415-11.021-27.495-3.523-26.359 10.919 2.68 34.008-9.589 67.315-33.648 91.384-24.068 24.058-57.366 36.317-91.384 33.648-14.426-1.138-21.947 16.935-10.918 26.357 54.424 46.494 54.379 130.373 0 176.827-10.98 9.38-3.574 27.497 10.919 26.358 71.358-5.621 130.649 53.735 125.031 125.031-1.137 14.448 16.949 21.933 26.358 10.919 46.494-54.424 130.373-54.379 176.827 0 9.342 10.946 27.501 3.6 26.358-10.919-5.623-71.354 53.735-130.648 125.031-125.031 14.45 1.138 21.934-16.949 10.92-26.358zm-250.722 55.347c-79.274 0-143.76-64.485-143.76-143.76s64.485-143.76 143.76-143.76 143.76 64.485 143.76 143.76-64.485 143.76-143.76 143.76z"/></g></svg></label>
+			<label class="switch">
+			  <input type="checkbox">
+			  <span class="slider round"></span>
+			</label>
+			<label><svg id="Capa_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497 497"><defs><style></style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M290.21,414.26A206.63,206.63,0,0,1,82.74,206.79c.33-90.84,58.79-168.29,140-197,5.67-2,3.69-10.49-2.27-9.71C99.1,15.87.46,121.55,0,248.39A247.35,247.35,0,0,0,248.61,497c126.84-.46,232.52-99.1,248.34-220.49.78-6-7.7-7.94-9.71-2.27C458.51,355.47,381.05,413.93,290.21,414.26Z"/><path class="cls-1" d="M487.24,274.24a209.76,209.76,0,0,1-37,64.76C414.35,425.92,330.77,490.55,232.6,496.53c5.3.32,10.63.49,16,.47,126.84-.46,232.52-99.1,248.34-220.49.78-6-7.7-7.94-9.71-2.27Z"/><path class="cls-1" d="M192.76,9.76c-81.23,28.73-139.69,106.19-140,197A206.63,206.63,0,0,0,260.21,414.26q7.16,0,14.2-.54A206.64,206.64,0,0,1,82.74,206.79c.33-90.84,58.79-168.29,140-197,5.67-2,3.69-10.49-2.27-9.71a247.21,247.21,0,0,0-24.4,4.46A4.85,4.85,0,0,1,192.76,9.76Z"/></g></g></svg></label>
+		</div>
+	</header>
+
+	<div id="filters">
+		<form id="form">
+			<div id="title">
+				<label for="title">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="28.931px" height="28.932px" viewBox="0 0 28.931 28.932" style="enable-background:new 0 0 28.931 28.932;"
+					 xml:space="preserve">
+				<g>
+					<path d="M28.344,25.518l-6.114-6.115c1.486-2.067,2.303-4.537,2.303-7.137c0-3.275-1.275-6.355-3.594-8.672
+						C18.625,1.278,15.543,0,12.266,0C8.99,0,5.909,1.275,3.593,3.594C1.277,5.909,0.001,8.99,0.001,12.266
+						c0,3.276,1.275,6.356,3.592,8.674c2.316,2.316,5.396,3.594,8.673,3.594c2.599,0,5.067-0.813,7.136-2.303l6.114,6.115
+						c0.392,0.391,0.902,0.586,1.414,0.586c0.513,0,1.024-0.195,1.414-0.586C29.125,27.564,29.125,26.299,28.344,25.518z M6.422,18.111
+						c-1.562-1.562-2.421-3.639-2.421-5.846S4.86,7.983,6.422,6.421c1.561-1.562,3.636-2.422,5.844-2.422s4.284,0.86,5.845,2.422
+						c1.562,1.562,2.422,3.638,2.422,5.845s-0.859,4.283-2.422,5.846c-1.562,1.562-3.636,2.42-5.845,2.42S7.981,19.672,6.422,18.111z"/>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				</svg>
+				</label>
+				<input type="text" name="filter" placeholder="Filter by title, companies, expertise" id="titlefilter">
+			</div>
+
+
+			<div id="filter-btn">
+				<svg version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="971.986px" height="971.986px" viewBox="0 0 971.986 971.986" style="enable-background:new 0 0 971.986 971.986;"
+					 xml:space="preserve">
+				<g>
+					<path d="M370.216,459.3c10.2,11.1,15.8,25.6,15.8,40.6v442c0,26.601,32.1,40.101,51.1,21.4l123.3-141.3
+						c16.5-19.8,25.6-29.601,25.6-49.2V500c0-15,5.7-29.5,15.8-40.601L955.615,75.5c26.5-28.8,6.101-75.5-33.1-75.5h-873
+						c-39.2,0-59.7,46.6-33.1,75.5L370.216,459.3z"/>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				<g>
+				</g>
+				</svg>
+			</div>
+			
+			<div id="filter-items">
+				<div id="location">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 512"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M195,512,350.9,312.13l.18-.22A193.32,193.32,0,0,0,390,195C390,87.48,302.52,0,195,0S0,87.48,0,195A193.44,193.44,0,0,0,39.1,312.13Zm0-452c74.44,0,135,60.56,135,135S269.44,330,195,330,60,269.44,60,195,120.56,60,195,60Z"/></g></g></svg>
+					<input type="text" name="location" placeholder="Filter by location" id="locationfilter">
+				</div>
+
+				<div id="full">
+					<label class="container">Full Time Only
+					  <input type="checkbox" id="fulltimefilter">
+					  <span class="checkmark"></span>
+					</label>
+				</div>
+			</div>
+
+				<input type="submit" name="submit" value="Search" id="submit-btn">
+			<div>
+
+			</div>
+		</form>
+	</div>
+
+	<section class="jobs">
+		
+	</section>
+
+	<div id="pagination">
+		<div class="prev">
+			<button id="prevbtn">
+				Prev
+			</button>
+		</div>
+		<div id="pages">
+			<p>Page <span id="current">1</span> of 3</p>
+		</div>
+		<div class="next">
+			<button id="nextbtn">
+				Next
+			</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+
+
+
+

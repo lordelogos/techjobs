@@ -1,0 +1,582 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+/*dark theme */
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+body{
+  color: rgba(255,255,255,.8);
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 11px;
+  width: 11px;
+  left: 2px;
+  bottom: 2px;
+  background-color: dodgerblue;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000d1a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 15px;
+
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#nav{
+	display: flex;
+	align-items: center;
+  margin-bottom: 5vh;
+}
+
+#nav svg{
+	width: 10px;
+  	height: 10px;
+    fill: #ccc;
+}
+
+#Capa_1{
+	padding-right: 1vw;
+}
+
+#Capa_2{
+	width: 8px;
+  	height: 8px;
+	padding-left: 1vw;
+}
+
+header{
+	width: 100%;
+	height: 15vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: dodgerblue;
+	border-bottom-left-radius: 40px;
+}
+
+
+#brand{
+  margin-bottom: 5vh;
+  align-self: center;
+}
+#brand label{
+	font-weight: 600;
+	color: white;
+  opacity: .8;
+}
+
+body{
+  background-color: #000d1a;
+}
+
+#form svg{
+  width: 10px;
+  height: 10px;
+  fill: dodgerblue;
+}
+
+
+#filters{
+  margin: auto;
+  width: 80%; 
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  background-color: #001a33;
+  border-radius: 3px;
+  margin-top: -4vh;
+}
+
+#form{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#form div{
+
+  display: flex;
+  align-items: center;
+}
+
+#title{
+  margin-left: 1vw;
+}
+
+#location svg{
+  margin-right: 1vw;
+}
+
+#form input[type= 'text']{
+  width: 20vw;
+  font-size: 10px;
+  padding: 5px 5px 5px 2px;
+  border: none;
+  background-color: inherit;
+  color: rgba(255,255,255,.8);
+}
+
+#title, #location{
+  border-right: solid .5px rgba(0,0,0,0.2);
+}
+
+#full-time{
+  margin-right: 1vw;
+  cursor: pointer;
+}
+
+label[for='full-time']{
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+  opacity: .8;
+}
+
+#full-time:hover{
+
+}
+
+#submit-btn{
+  transition: .3s;
+  padding: 8px 10px;
+  background-color: dodgerblue;
+  border: none;
+  color: rgba(255,255,255,.8);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+#submit-btn:hover{
+  background-color: rgba(30, 144, 255, .7);
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #bfbfbf;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: dodgerblue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 3px;
+  top: 1px;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#filter-items {
+  display: flex;
+}
+
+#filter-items #location{
+  margin-right: 1vw;
+}
+
+#filter-btn svg, #filter-btn{
+  display: none;
+}
+
+
+@media screen and (max-width: 768px){
+  header{
+    border-bottom-left-radius: 0px;
+  }
+
+  body{
+    width: 100vw;
+  }
+  #title, #location{
+    border: none;
+
+  }
+
+  #filter-btn svg, #filter-btn{
+    display: block;
+    cursor: pointer;
+  }
+
+
+
+  #form input[type ='text']{
+    width: 45vw;
+  }
+
+  #location input[type='text']{
+    width: 30vw;
+  }
+
+  #filter-items{
+    position: absolute;
+    width: 80vw;
+    top: 19vh;
+    left: 10vw;
+    background-color: #001a33;
+    display: block;
+}
+
+  .container{
+    font-size: 12px;
+  }
+
+  #location svg{
+    margin-right: 1vw;
+    margin-left: 1vw;
+  }
+
+  #full, #location{
+    display: inline;
+    display: block;
+    margin-bottom: 2vh;
+  }
+
+  #filter-items{
+    visibility: hidden;
+  }
+
+}
+
+.jobs{
+  margin-top: 10vh;
+}
+
+.jobs{
+  min-height: 100vh;
+  width: 80%;
+  margin: auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.jobs a{
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.jobCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 5px 20px ;
+  background-color: #001a33;
+  width: 280px;
+  height: 155px;
+  margin-bottom: 5vh;
+}
+
+.jobIcon{
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.jobCard p{
+  font-size: 13px;
+  padding-bottom: 7px;
+}
+
+.jobTime{
+  color: #ccc;
+  font-size: `10px;
+}
+
+.jobTitle{
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255,255,255,.8);
+}
+
+.companyName{
+  color: #ccc;
+  font-size: 10px;
+}
+
+.joblinks{
+  color: dodgerblue !important;
+  font-size: 13px;
+  font-weight: 600 !important;
+}
+
+.joblinks:hover{
+  text-decoration: underline;
+}
+
+.jobLocation{
+  color: rgba(255,255,255,.8);
+  font-size: 9px;
+  justify-self: flex-end;
+}
+
+@media screen and (max-width: 600px){
+  .jobCard{
+    height: auto;
+  }
+}
+
+#pagination{
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev{
+  margin-right: 1vw;
+}
+
+.next{
+  margin-left: 1vw;
+}
+
+#pagination button{
+  transition: .3s;
+  padding: 8px 10px;
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+#pagination button:hover{
+  background-color: rgba(30, 144, 255, .7);
+}
+
+#pagination p{
+  color: rgba(255,255,255,.8);
+}
+
+
+.jobbrand{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #001a33;
+}
+
+.jobbrand img{
+  width: 10%;
+  height: 100%;
+  margin-right: 4vw;
+}
+
+.jobNames{
+  width: 50%;
+  height: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jobNames p{
+  padding-bottom: 5px;
+}
+
+.jobNames-main{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.jobNames-url{
+  font-size: 10px;
+  color: #ccc;
+}
+
+.jobDiv{
+  width: 30%;
+  margin: auto;
+}
+
+.backbtn{
+  transition: .3s;
+  padding: 8px 10px;
+  margin-right: 2vw;
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.backbtn:hover{
+  background-color: rgba(30, 144, 255, .7);
+}
+
+
+.jobbody{
+  padding: 5vh 3vh;
+  margin: auto;
+  width: 100%;
+  background-color: #001a33;
+}
+
+.jobbody-time{
+  color: #ccc;
+  font-size: 10px;
+}
+
+.jobody-title{
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.jobody-location{
+  color: dodgerblue;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+.job-desc-{
+  word-spacing: 2px;
+  font-size: 13px;
+}
+
+.job-desc- li{
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.job-desc- p{
+  padding: 4px 0;
+}
+
+.job-desc- ul{
+  margin: 2vh 0;
+}
+
+.job-desc- p strong{
+  margin: 2vh 0;
+}
+
+.howtoApply{
+  width: 100%;
+  padding: 5vh 3vh;
+  background-color: dodgerblue;
+  color: rgba(255,255,255,.8);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.howtoApply a{
+  text-decoration: underline;
+}
