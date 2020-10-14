@@ -438,6 +438,7 @@ label[for='full-time']{
 
 .prev{
   margin-right: 1vw;
+  visibility:hidden;
 }
 
 .next{
