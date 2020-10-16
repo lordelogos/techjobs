@@ -120,6 +120,7 @@ var siteurl = window.location.href;
 	xhr.onload = function (){
 		if (this.status == 200){
 			var arr = JSON.parse(this.responseText);
+			document.getElementById("loader").style.display = "none";
 			populate(arr);
 	}}
 
@@ -188,11 +189,13 @@ function checkPg(){
 
 function loadPg(){
 	jobs.innerHTML = '';
+	document.getElementById("loader").style.display = "block";
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs?page=${parseInt(currentpg.textContent)}`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
+			document.getElementById("loader").style.display = "none";
 			populate(arr);
 			
 	}
@@ -212,12 +215,14 @@ function filterJobs(e){
 	var b = document.querySelector('#locationfilter').value // loctation i.e city, country
 	var c = document.querySelector('#fulltimefilter').checked // fulltime only jobs filter;
 	jobs.innerHTML = '';
+	document.getElementById("loader").style.display = "block";
 	document.querySelector('#pagination').style.visibility = 'hidden';
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs?description=${a}&full_time=${c}&location=${b}`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
+			document.getElementById("loader").style.display = "none";
 			populate(arr);
 			
 	}
@@ -236,6 +241,7 @@ function openjob(){
 	e.preventDefault();
 	console.log(e.target.href);
 	jobs.innerHTML = '';
+	document.getElementById("loader").style.display = "block";
 	document.querySelector('#pagination').style.visibility = 'hidden';
 	prev.style.visibility = 'hidden';
 	next.style.visibility = 'hidden';
@@ -245,7 +251,7 @@ function openjob(){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
 			var pme = new Jobdesc(arr);
-			console.log(pme.jobpage())
+			document.getElementById("loader").style.display = "none";
 			mainnav.innerHTML = pme.quickactions();
 			jobs.innerHTML = pme.jobpage();
 			back2site();
