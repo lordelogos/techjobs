@@ -438,6 +438,7 @@ label[for='full-time']{
 
 .prev{
   margin-right: 1vw;
+  visibility:hidden;
 }
 
 .next{
@@ -580,6 +581,7 @@ label[for='full-time']{
 .howtoApply a{
   text-decoration: underline;
 }
+<<<<<<< HEAD
 
 
 .hta{
@@ -587,3 +589,5 @@ label[for='full-time']{
   text-transform: uppercase;
   margin-bottom: 5px;
 }
+=======
+>>>>>>> 4ef6b2d65ff1c79e1d49a1afb2e73e3f58ec6620
