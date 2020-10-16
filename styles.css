@@ -337,7 +337,7 @@ label[for='full-time']{
 }
 
 .jobs{
-	min-height: 100vh;
+	min-height: 80vh;
 	width: 80%;
 	margin: auto;
 	margin-top: 10vh;
@@ -558,6 +558,8 @@ label[for='full-time']{
 	color: white;
 	font-size: 13px;
 	font-weight: 600;
+	overflow-wrap: break-word;
+  	word-wrap    : break-word;
 }
 
 .howtoApply a{
