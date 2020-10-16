@@ -580,3 +580,10 @@ label[for='full-time']{
 .howtoApply a{
   text-decoration: underline;
 }
+
+
+.hta{
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}

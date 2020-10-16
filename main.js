@@ -70,7 +70,7 @@ class Job{
 			<p class="jobTitle">${this.jobname}</p>
 			<p class="companyName">${this.company}</p>
 			<p class="jobLocation">${this.location}</p>
-			<a href="${this.url}" class="joblinks">View Job</a>
+			<a href="${this.id}" class="joblinks">View Job</a>
 		</div>
 		`
 	}
@@ -94,18 +94,8 @@ filterbtn.addEventListener('click', function(){
 var jobs = document.querySelector('.jobs');
 var arr;
 
-( function(){
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'https://jobs.github.com/positions.json?page=1', true);
-	xhr.onload = function (){
-		if (this.status == 200){
-			arr = JSON.parse(this.responseText);
-			populate(arr);
-		};
-	}
+//auto load page
 
-	xhr.send();
-})()
 
 function populate(arr){
 	for (let i in arr){
@@ -120,8 +110,38 @@ function populate(arr){
 }
 
 
+var siteurl = window.location.href;
+
+
+
+( function(){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", `https://githubjobsapi.waynejr.repl.co/jobs?page=1`, true); // assuming you’re hosting it locally
+	xhr.onload = function (){
+		if (this.status == 200){
+			var arr = JSON.parse(this.responseText);
+			populate(arr);
+	}}
+
+	xhr.send()
+})()
+
+
+function populate(arr){
+	for (let i in arr){
+		count ++;
+		if (count >= icons.length){
+			count = 0
+		}
+		var emp = new Job(arr[i]);
+		jobs.innerHTML += emp.jobCard();
+	}
+	openjob();
+}
+
 
 /*
+
 var paul = {
 	company: "Limango",
 	company_logo: "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdnFMIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12210a670640379f77b6d5d09f027d319609c4fb/Limango.png",
@@ -132,9 +152,10 @@ location: "Munich",
 title: "PHP Developer (m/w/d) Marketplace",
 type: "Full Time",
 url: "https://jobs.github.com/positions/ba835cf0-1f82-4233-9ee2-1091cc9ad75a"}
-*/
 
+*/
 //pagination client-side :-)
+
 
 var next = document.querySelector('#nextbtn');
 var prev = document.querySelector('#prevbtn');
@@ -166,7 +187,7 @@ function checkPg(){
 function loadPg(){
 	jobs.innerHTML = '';
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', `https://jobs.github.com/positions.json?page=${parseInt(currentpg.textContent)}`, true);
+	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs?page=${parseInt(currentpg.textContent)}`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
@@ -191,7 +212,7 @@ function filterJobs(e){
 	jobs.innerHTML = '';
 	document.querySelector('#pagination').style.visibility = 'hidden';
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', `https://jobs.github.com/positions.json?description=${a}&full_time=${c}&location=${b}`, true);
+	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs?description=${a}&full_time=${c}&location=${b}`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
@@ -215,7 +236,7 @@ function openjob(){
 	jobs.innerHTML = '';
 	document.querySelector('#pagination').style.visibility = 'hidden';
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', `${e.target.href}.json`, true);
+	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs/${e.target.getAttribute('href')}`, true);
 	xhr.onload = function (){
 		if (this.status == 200){
 			arr = JSON.parse(this.responseText);
@@ -270,6 +291,7 @@ class Jobdesc{
 		</div>
 
 		<div class="howtoApply">
+			<p class="hta">How To Apply</>
 				${this.apply}
 		</div>
 		`
@@ -416,4 +438,3 @@ function back2site(){
 	var backbtn2 = document.querySelector('.backbtn');
 	backbtn2.addEventListener('click', loadPg2);
 }
-
