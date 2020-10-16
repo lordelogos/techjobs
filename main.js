@@ -175,9 +175,11 @@ prev.addEventListener('click', function(){
 
 function checkPg(){
 	if (parseInt(currentpg.textContent) == 3){
+		prev.style.visibility = 'visible';
 		next.style.visibility = 'hidden';
 	}else if(parseInt(currentpg.textContent) == 1){
 		prev.style.visibility = 'hidden';
+		next.style.visibility = 'visible';
 	}else{
 		next.style.visibility = 'visible';
 		prev.style.visibility = 'visible';
@@ -235,6 +237,8 @@ function openjob(){
 	console.log(e.target.href);
 	jobs.innerHTML = '';
 	document.querySelector('#pagination').style.visibility = 'hidden';
+	prev.style.visibility = 'hidden';
+	next.style.visibility = 'hidden';
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', `https://githubjobsapi.waynejr.repl.co/jobs/${e.target.getAttribute('href')}`, true);
 	xhr.onload = function (){
@@ -429,6 +433,7 @@ function loadPg2(){
 		</form>
 	`;
 	document.querySelector('#pagination').style.visibility = 'visible';
+	checkPg();
 	loadPg();
 
 }
